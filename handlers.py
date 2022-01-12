@@ -12,18 +12,18 @@ def face(frame, faces):
  else:
   utterance = "{} and {}".format(strings.yLookup[yKey], strings.xLookup[xKey])
  if len(faces) > 1: utterance = utterance + ". "+strings.confidenceMessagesLookup[maths.getClosest(strings.confidenceMessagesLookupList, len(faces))]
- speech.say(utterance)
+ speech.output(utterance)
 
 def noFace():
- speech.say(strings.noFace)
+ speech.output(strings.noFace)
 
 def launchError():
  import sys
- speech.say(strings.initFailure)
+ speech.output(strings.initFailure)
  sys.exit(1)
 
 def takePhoto(cv2, frame):
  import datetime
  fName = str(datetime.datetime.now()).replace(':', '-')+'.jpg'
  cv2.imwrite(fName, frame)
- speech.say(strings.photoTaken)
+ speech.output(strings.photoTaken)

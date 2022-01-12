@@ -4,7 +4,7 @@ import cv2
 import strings
 import handlers
 
-speech.say(strings.loadingMessage)
+speech.output(strings.loadingMessage)
 cap = cv2.VideoCapture(0)
 faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
