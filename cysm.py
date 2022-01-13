@@ -5,7 +5,7 @@ import strings
 import handlers
 
 speech.output(strings.loadingMessage)
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 #VideoCapture won't throw an exception if the device doesn't exist so only cv2-native way of figuring out if a webcam is attached is to try and display an image from it and see what happens
