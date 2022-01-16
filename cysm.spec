@@ -1,5 +1,9 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+import os
+import sys
+
+PYTHON_PATH = os.path.dirname(sys.executable)
 
 block_cipher = None
 
@@ -7,7 +11,7 @@ block_cipher = None
 a = Analysis(['cysm.py'],
              pathex=[],
              binaries=[],
-             datas=[('haarcascade_frontalface_default.xml', '.')],
+             datas=[('haarcascade_frontalface_default.xml', '.'), ("{}/Lib/site-packages/speechlight/speech_libs".format(PYTHON_PATH), 'speech_libs')],
              hiddenimports=[],
              hookspath=[],
              hooksconfig={},
