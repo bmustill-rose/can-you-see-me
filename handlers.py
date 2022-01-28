@@ -3,6 +3,15 @@ import strings
 import vision
 import maths
 
+def scanForFaces(cv2, faceCascade, frame, key):
+ faces = faceCascade.detectMultiScale(frame)
+ if len(faces) > 0:
+  foundFace(frame, faces)
+ else:
+  noFace()
+
+
+
 def foundFace(frame, faces):
  middleXY = vision.getMiddleXYOfFace(frame, faces[0])
  yKey = maths.getClosest(strings.yLookupList, middleXY['middleY'])

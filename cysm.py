@@ -26,12 +26,7 @@ while True:
  c = cv2.waitKey(1)
  if c == 27: break
  elif c == 112: handlers.takePhoto(cv2, frame)
- elif c == 13:
-  faces = faceCascade.detectMultiScale(frame)
-  if len(faces) > 0:
-   handlers.foundFace(frame, faces)
-  else:
-   handlers.noFace()
+ elif c == 13: handlers.scanForFaces(cv2, faceCascade, frame, c)
 
 cap.release()
 cv2.destroyAllWindows()
