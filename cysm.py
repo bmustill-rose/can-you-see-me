@@ -23,10 +23,10 @@ except:
 while True:
  ret, frame = cap.read()
  cv2.imshow(strings.initSuccess, frame)
- c = cv2.waitKey(1)
- if c == 27: break
- elif c == 112: handlers.takePhoto(cv2, frame)
- elif c == 13: handlers.scanForFaces(cv2, faceCascade, frame, c)
+ key = cv2.waitKey(1)
+ if key == 27: break
+ elif key == 112: handlers.takePhoto(cv2, frame)
+ elif key == 13: handlers.scanForFaces(cv2, faceCascade, frame, key)
 
 cap.release()
 cv2.destroyAllWindows()
