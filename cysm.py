@@ -1,16 +1,11 @@
-import sys
-try:
- sys.path.append(sys._MEIPASS)
-except:
- pass
-
-from speechlight import speech
 import cv2
+from speechlight import speech
 
-import strings
 import handlers
+import strings
 
 speech.output(strings.loadingMessage)
+
 cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
