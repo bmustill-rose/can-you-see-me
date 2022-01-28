@@ -6,13 +6,13 @@ import maths
 def scanForFaces(cv2, faceCascade, frame, key):
  faces = faceCascade.detectMultiScale(frame)
  if len(faces) > 0:
-  foundFace(frame, faces)
+  utterance = generateSimpleFoundFaceUtterance(frame, faces)
+  if key == 100: utterance = utterance + generateLocationUtteranceForFace(frame, faces)
  else:
-  noFace()
+  utterance = generateNoFaceUtterance()
+ speech.output(utterance)
 
-
-
-def foundFace(frame, faces):
+def generateSimpleFoundFaceUtterance(frame, faces):
  middleXY = vision.getMiddleXYOfFace(frame, faces[0])
  yKey = maths.getClosest(strings.yLookupList, middleXY['middleY'])
  xKey = maths.getClosest(strings.xLookupList, middleXY['middleX'])
@@ -21,10 +21,14 @@ def foundFace(frame, faces):
  else:
   utterance = "{} and {}".format(strings.yLookup[yKey], strings.xLookup[xKey])
  if len(faces) > 1: utterance = utterance + ". "+strings.confidenceMessagesLookup[maths.getClosest(strings.confidenceMessagesLookupList, len(faces))]
- speech.output(utterance)
+ return utterance
 
-def noFace():
- speech.output(strings.noFace)
+def generateLocationUtteranceForFace(frame, faces):
+ middleXY = vision.getMiddleXYOfFace(frame, faces[0])
+ return ". x: {}% y: {}%".format(round(middleXY['middleX'], 1), round(middleXY['middleY'], 1))
+
+def generateNoFaceUtterance():
+ return strings.noFace
 
 def launchError():
  import sys
