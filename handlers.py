@@ -3,7 +3,7 @@ import strings
 import vision
 import maths
 
-def face(frame, faces):
+def foundFace(frame, faces):
  middleXY = vision.getMiddleXYOfFace(frame, faces[0])
  yKey = maths.getClosest(strings.yLookupList, middleXY['middleY'])
  xKey = maths.getClosest(strings.xLookupList, middleXY['middleX'])

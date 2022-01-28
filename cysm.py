@@ -22,17 +22,14 @@ except:
 
 while True:
  ret, frame = cap.read()
- faces = faceCascade.detectMultiScale(frame)
- if len(faces) > 0:
-  for (x, y, w, h) in faces:
-   cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 2)
  cv2.imshow(strings.initSuccess, frame)
  c = cv2.waitKey(1)
  if c == 27: break
  elif c == 112: handlers.takePhoto(cv2, frame)
  elif c == 13:
+  faces = faceCascade.detectMultiScale(frame)
   if len(faces) > 0:
-   handlers.face(frame, faces)
+   handlers.foundFace(frame, faces)
   else:
    handlers.noFace()
 
