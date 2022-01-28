@@ -2,7 +2,7 @@
 
 
 #Initialization messages
-initSuccess = "Welcome to Can You See Me. Press enter to check your faces position, p to take a photo or escape to exit."
+initSuccess = "Welcome to Can You See Me. Press enter to check your faces position, d for more detailed information, p to take a photo or escape to exit."
 initFailure = "Can You See Me was unable to detect your webcam. Please make sure it is connected and turned on then run the program again. Exiting."
 loadingMessage = "Loading. Please wait..."
 
