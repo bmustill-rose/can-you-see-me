@@ -8,19 +8,19 @@ loadingMessage = "Loading. Please wait..."
 
 #Lookup tables matching percentage positions to strings
 yLookup = {
- 80: 'Bottom',
- 60: 'Near the bottom',
- 40: 'Middle',
+ 0: 'Top',
  20: 'Near the top',
- 0: 'Top'
+ 40: 'Middle',
+ 60: 'Near the bottom',
+ 80: 'Bottom'
 }
 
 xLookup = {
- 80: 'right',
- 60: 'slightly to the right',
- 40: 'middle',
+ 0: 'left',
  20: 'slightly to the left',
- 0: 'left'
+ 40: 'middle',
+ 60: 'slightly to the right',
+ 80: 'right'
 }
 
 #Lookup table for confidence messages
