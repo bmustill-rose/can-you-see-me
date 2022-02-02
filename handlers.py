@@ -2,10 +2,12 @@ from speechlight import speech
 
 import generators
 import strings
+import vision
 
 def scanForFaces(cv2, faceCascade, frame, key):
  faces = faceCascade.detectMultiScale(frame)
  if len(faces) > 0:
+  faces = vision.sortFacesLargeToSmall(faces)
   utterance = generators.generateSimpleFaceLocationUtterance(frame, faces)
   if key == 100: utterance = utterance + generators.generateDetailedFaceLocationUtterance(frame, faces)
  else:
