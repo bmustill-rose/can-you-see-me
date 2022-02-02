@@ -5,7 +5,7 @@ import strings
 import vision
 
 def scanForFaces(cv2, faceCascade, frame, key):
- faces = faceCascade.detectMultiScale(frame)
+ faces = faceCascade.detectMultiScale(frame, minNeighbors=6, minSize=(60,60), scaleFactor=1.1)
  if len(faces) > 0:
   faces = vision.sortFacesLargeToSmall(faces)
   utterance = generators.generateSimpleFaceLocationUtterance(frame, faces)
