@@ -24,5 +24,7 @@ def takePhoto(cv2, frame):
  cv2.imwrite(fName, frame)
  speech.output(strings.photoTaken)
 
-def debug(cv2, frame):
- return none
+def debug(cv2, faceCascade, frame):
+ faces = vision.findFaces(faceCascade, frame)
+ for (x,y,w,h) in faces:
+  cv2.rectangle(frame, (x,y), (x+w, y+h), (0,255,0), 2)

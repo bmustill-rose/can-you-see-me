@@ -27,12 +27,12 @@ except:
 
 while True:
  ret, frame = cap.read()
+ if args.debug: handlers.debug(cv2, faceCascade, frame) #In this position so that the changes are made to the frame before it's displayed
  cv2.imshow(strings.initSuccess, frame)
  key = cv2.waitKey(1)
  if key == 27: break
  elif key == 112: handlers.takePhoto(cv2, frame)
  elif key == 13 or key == 100: handlers.scanForFaces(faceCascade, frame, key)
- if args.debug: handlers.debug(frame)
 
 cap.release()
 cv2.destroyAllWindows()
