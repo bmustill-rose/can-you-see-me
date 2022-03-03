@@ -1,3 +1,4 @@
+import argparse
 import cv2
 from speechlight import speech
 
@@ -5,11 +6,14 @@ import handlers
 import strings
 import utils
 
+parser = argparse.ArgumentParser()
+parser.add_argument("-d", "--debug", help=strings.debugDescription, action = "store_true")
+args = parser.parse_args()
+
 speech.output(strings.loadingMessage)
 
 cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080) #Attempt to set webcam resolution to 1080P. Will / should gracefully fall back to maximum supported if it can't
 
 faceCascade = cv2.CascadeClassifier(utils.getPathToFile('haarcascade_frontalface_default.xml'))
@@ -28,6 +32,7 @@ while True:
  if key == 27: break
  elif key == 112: handlers.takePhoto(cv2, frame)
  elif key == 13 or key == 100: handlers.scanForFaces(cv2, faceCascade, frame, key)
+ if args.debug: handlers.debug(frame)
 
 cap.release()
 cv2.destroyAllWindows()

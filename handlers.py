@@ -5,7 +5,8 @@ import strings
 import vision
 
 def scanForFaces(cv2, faceCascade, frame, key):
- faces = faceCascade.detectMultiScale(frame, minNeighbors=6, minSize=(60,60), scaleFactor=1.1)
+ #faces = faceCascade.detectMultiScale(frame, minNeighbors=6, minSize=(60,60), scaleFactor=1.1)
+ faces = faceCascade.detectMultiScale(frame)
  if len(faces) > 0:
   faces = vision.sortFacesLargeToSmall(faces)
   utterance = generators.generateSimpleFaceLocationUtterance(frame, faces)
@@ -24,3 +25,5 @@ def takePhoto(cv2, frame):
  fName = str(datetime.datetime.now()).replace(':', '-')+'.jpg'
  cv2.imwrite(fName, frame)
  speech.output(strings.photoTaken)
+
+def debug(cv2, frame):
