@@ -4,11 +4,9 @@ import generators
 import strings
 import vision
 
-def scanForFaces(cv2, faceCascade, frame, key):
- #faces = faceCascade.detectMultiScale(frame, minNeighbors=6, minSize=(60,60), scaleFactor=1.1)
- faces = faceCascade.detectMultiScale(frame)
+def scanForFaces(faceCascade, frame, key):
+ faces = vision.findFaces(faceCascade, frame)
  if len(faces) > 0:
-  faces = vision.sortFacesLargeToSmall(faces)
   utterance = generators.generateSimpleFaceLocationUtterance(frame, faces)
   if key == 100: utterance = utterance + generators.generateDetailedFaceLocationUtterance(frame, faces)
  else:
@@ -27,3 +25,4 @@ def takePhoto(cv2, frame):
  speech.output(strings.photoTaken)
 
 def debug(cv2, frame):
+ return none

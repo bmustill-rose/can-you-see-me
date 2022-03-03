@@ -1,5 +1,11 @@
 import maths
 
+def findFaces(faceCascade, frame):
+ faces = faceCascade.detectMultiScale(frame, minNeighbors=6, minSize=(60,60), scaleFactor=1.1)
+ if len(faces) > 0:
+  faces = sortFacesLargeToSmall(faces)
+ return faces
+
 def getImageXY(frame):
  x, y, c = frame.shape
  return {'x': x, 'y': y}

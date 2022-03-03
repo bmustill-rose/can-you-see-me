@@ -31,7 +31,7 @@ while True:
  key = cv2.waitKey(1)
  if key == 27: break
  elif key == 112: handlers.takePhoto(cv2, frame)
- elif key == 13 or key == 100: handlers.scanForFaces(cv2, faceCascade, frame, key)
+ elif key == 13 or key == 100: handlers.scanForFaces(faceCascade, frame, key)
  if args.debug: handlers.debug(frame)
 
 cap.release()
