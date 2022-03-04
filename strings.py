@@ -1,6 +1,5 @@
 #Various pieces of text used throughout the application
 
-
 #Initialization and argument related messages
 initSuccess = "Welcome to Can You See Me. Press enter to check your faces position, d for more detailed information, p to take a photo or escape to exit."
 initFailure = "Can You See Me was unable to detect your webcam. Please make sure it is connected and turned on then run the program again. Exiting."
@@ -35,6 +34,7 @@ yLookupList = list(yLookup.keys())
 xLookupList = list(xLookup.keys())
 confidenceMessagesLookupList = list(confidenceMessagesLookup.keys())
 
-#Face and photo related messages
+#Face, photo and debugging related messages
 noFace = "No face found. Try adjusting the position of your webcam and or checking the light level of your room."
 photoTaken = "Photo taken"
+debugIntroMessage = "{} faces found:"

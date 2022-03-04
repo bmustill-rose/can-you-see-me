@@ -19,3 +19,9 @@ def generateDetailedFaceLocationUtterance(frame, faces):
 
 def generateNoFaceUtterance():
  return strings.noFace
+
+def generateDebugUtterance(faces):
+ utterance = strings.debugIntroMessage.format(str(len(faces)))
+ for (x,y,w,h) in faces:
+  utterance = utterance + "X:{}. Y:{}. Width:{}. Height:{}.".format(x, y, w, h)
+ return utterance

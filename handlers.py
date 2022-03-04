@@ -4,10 +4,11 @@ import generators
 import strings
 import vision
 
-def scanForFaces(faceCascade, frame, key):
+def scanForFaces(faceCascade, frame, key, debug):
  faces = vision.findFaces(faceCascade, frame)
  if len(faces) > 0:
   utterance = generators.generateSimpleFaceLocationUtterance(frame, faces)
+  if debug: utterance = utterance + generators.generateDebugUtterance(faces)
   if key == 100: utterance = utterance + generators.generateDetailedFaceLocationUtterance(frame, faces)
  else:
   utterance = generators.generateNoFaceUtterance()
