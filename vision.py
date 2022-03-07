@@ -7,7 +7,7 @@ def findFaces(faceCascade, frame):
  return faces
 
 def getImageXY(frame):
- x, y, c = frame.shape
+ y, x, c = frame.shape
  return {'x': x, 'y': y}
 
 def getMiddleXYOfFace(frame, face):
