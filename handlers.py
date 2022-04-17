@@ -8,11 +8,12 @@ def scanForFaces(faceCascade, frame, key, debug):
  faces = vision.findFaces(faceCascade, frame)
  if len(faces) > 0:
   utterance = generators.generateSimpleFaceLocationUtterance(frame, faces)
-  if debug: utterance = utterance + generators.generateDebugUtterance(faces)
   if key == 100: utterance = utterance + generators.generateDetailedFaceLocationUtterance(frame, faces)
+  if debug: utterance = utterance + generators.generateDebugUtterance(faces)
  else:
   utterance = generators.generateNoFaceUtterance()
  speech.output(utterance)
+ print(utterance)
 
 def launchError():
  import sys

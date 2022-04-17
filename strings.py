@@ -25,8 +25,8 @@ xLookup = {
 
 #Lookup table for confidence messages
 confidenceMessagesLookup = {
- 2: 'Low confidence',
- 3: 'Very low confidence'
+ 2: ' Low confidence.',
+ 3: ' Very low confidence.'
 }
 
 #Generate lists of keys based on the above once at runtime to avoid having to do it for every successful detection
@@ -35,6 +35,9 @@ xLookupList = list(xLookup.keys())
 confidenceMessagesLookupList = list(confidenceMessagesLookup.keys())
 
 #Face, photo and debugging related messages
-noFace = "No face found. Try adjusting the position of your webcam and or checking the light level of your room."
+simpleFaceLocation = "{} and {}."
+detailedFaceLocation = " X: {}%, Y: {}%."
+noFacesFound = "No face found. Try adjusting the position of your webcam and or checking the light level of your room."
 photoTaken = "Photo taken"
-debugIntroMessage = "{} faces found:"
+debugIntro = " {} faces found."
+debugFaceInfo = " X: {}, Y: {}, width: {}, height: {}."
