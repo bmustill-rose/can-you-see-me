@@ -13,7 +13,6 @@ def scanForFaces(faceCascade, frame, key, debug):
  else:
   utterance = generators.generateNoFaceUtterance()
  speech.output(utterance)
- print(utterance)
 
 def launchError():
  import sys
