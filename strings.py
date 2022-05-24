@@ -8,19 +8,23 @@ debugDescription = "Draw outlines around all detected faces"
 
 #Lookup tables matching percentage positions to strings
 yLookup = {
- 10: 'Top',
- 30: 'Near the top',
- 50: 'Middle',
- 70: 'Near the bottom',
- 90: 'Bottom'
+ 25: 'At the top',
+ 35: 'Near the top',
+ 45: 'Near the middle',
+ 50: 'In the middle',
+ 55: 'Near the middle', 
+ 65: 'Near the bottom',
+ 75: 'At the bottom'
 }
 
 xLookup = {
- 10: 'left',
- 30: 'slightly to the left',
- 50: 'middle',
- 70: 'slightly to the right',
- 90: 'right'
+ 25: 'to the left',
+ 35: 'slightly to the left',
+ 45: 'near the middle',
+ 50: 'in the middle',
+ 55: 'near the middle',
+ 65: 'slightly to the right',
+ 75: 'to the right'
 }
 
 #Lookup table for confidence messages
