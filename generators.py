@@ -15,7 +15,7 @@ def generateSimpleFaceLocationUtterance(frame, faces):
 
 def generateDetailedFaceLocationUtterance(frame, faces):
  middleXY = vision.getMiddleXYOfFace(frame, faces[0])
- return strings.detailedFaceLocation.format(round(middleXY['middleX'], 1), round(middleXY['middleY'], 1))
+ return strings.detailedFaceLocation.format(round(middleXY['middleY'], 1), round(middleXY['middleX'], 1))
 
 def generateNoFaceUtterance():
  return strings.noFacesFound

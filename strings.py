@@ -40,7 +40,7 @@ confidenceMessagesLookupList = list(confidenceMessagesLookup.keys())
 
 #Face, photo and debugging related messages
 simpleFaceLocation = "{} and {}."
-detailedFaceLocation = " X: {}%, Y: {}%."
+detailedFaceLocation = " Y: {}%, X: {}%."
 noFacesFound = "No face found. Try adjusting the position of your webcam and or checking the light level of your room."
 photoTaken = "Photo taken"
 debugIntro = " {} faces found."
