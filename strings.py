@@ -9,21 +9,21 @@ debugDescription = "Draw outlines around all detected faces"
 #Lookup tables matching percentage positions to strings
 yLookup = {
  25: 'At the top',
- 35: 'Near the top',
- 45: 'Near the middle',
+ 35: 'Towards the top',
+ 45: 'Slightly towards the top',
  50: 'In the middle',
- 55: 'Near the middle', 
- 65: 'Near the bottom',
+ 55: 'Slightly towards the bottom', 
+ 65: 'Towards the bottom',
  75: 'At the bottom'
 }
 
 xLookup = {
  25: 'to the left',
- 35: 'slightly to the left',
- 45: 'near the middle',
+ 35: 'approaching the left',
+ 45: 'slightly to the left',
  50: 'in the middle',
- 55: 'near the middle',
- 65: 'slightly to the right',
+ 55: 'slightly to the right',
+ 65: 'approaching the right',
  75: 'to the right'
 }
 
