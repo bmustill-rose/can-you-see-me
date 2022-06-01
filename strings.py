@@ -18,13 +18,13 @@ yLookup = {
 }
 
 xLookup = {
- 25: 'to the left',
- 35: 'approaching the left',
- 45: 'slightly to the left',
+ 25: 'to the right',
+ 35: 'approaching the right',
+ 45: 'slightly to the right',
  50: 'in the middle',
- 55: 'slightly to the right',
- 65: 'approaching the right',
- 75: 'to the right'
+ 55: 'slightly to the left',
+ 65: 'approaching the left',
+ 75: 'to the left'
 }
 
 #Lookup table for confidence messages
